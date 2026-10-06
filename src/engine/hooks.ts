@@ -288,7 +288,7 @@ const BASE: Grammar = {
   // --- errands and complications ------------------------------------------
   quarry: ['someone who does not want to be found', 'a book that was never catalogued',
     'the other half of #object_plain.a#', 'a witness', 'a map of a coastline that has changed',
-    'whoever signed #document#', 'the person who taught #bg_person# their trade',
+    'whoever signed #document#', 'whoever trained the person who trained them',
     'a town that appears on one map and no others'],
   complication: ['they are not certain they want to succeed', 'the trail has been deliberately warmed',
     'somebody else is looking too, and politely', 'the last three leads were planted',
