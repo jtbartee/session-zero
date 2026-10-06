@@ -1,0 +1,11 @@
+import { ALL_SPECIES, CORE_SPECIES, EXPANDED_SPECIES, speciesGroups } from '../src/data/species/index.ts';
+import { ALL_BACKGROUNDS, CORE_BACKGROUNDS, EXPANDED_BACKGROUNDS } from '../src/data/backgrounds/index.ts';
+console.log(`species total=${ALL_SPECIES.length} core=${CORE_SPECIES.length} expanded=${EXPANDED_SPECIES.length}`);
+for (const g of speciesGroups()) console.log(`  ${g.label}: ${g.species.length}`);
+const traditions = ALL_SPECIES.reduce((n, s) => n + s.traditions.length, 0);
+const structures = ALL_SPECIES.reduce((n, s) => n + s.traditions.reduce((m, t) => m + t.structures.length, 0), 0);
+console.log(`traditions=${traditions} structures=${structures}`);
+console.log(`backgrounds total=${ALL_BACKGROUNDS.length} core=${CORE_BACKGROUNDS.length} expanded=${EXPANDED_BACKGROUNDS.length}`);
+const byConf: Record<string, number> = {};
+for (const s of ALL_SPECIES) byConf[s.confidence] = (byConf[s.confidence] ?? 0) + 1;
+console.log('confidence:', byConf);

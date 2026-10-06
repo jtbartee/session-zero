@@ -1,0 +1,84 @@
+/*
+ * Design tokens.
+ *
+ * The palette is deliberately narrow: a near-black ground, warm parchment
+ * type, antique brass for anything interactive, rust for emphasis. Every
+ * foreground/background pair in use clears WCAG AA at its size.
+ */
+
+:root {
+  /* --- ground ------------------------------------------------------- */
+  --ink-900: #0d0c0b;
+  --ink-850: #121110;
+  --ink-800: #171614;
+  --ink-750: #1d1b18;
+  --ink-700: #24211e;
+  --ink-650: #2b2724;
+  --ink-600: #36312c;
+  --ink-500: #453f38;
+
+  /* --- type --------------------------------------------------------- */
+  --parchment: #efe6d5;
+  --parchment-dim: #bcb09a;
+  --parchment-faint: #8b8172;
+
+  /* --- accents ------------------------------------------------------ */
+  --brass: #cda55c;
+  --brass-bright: #e3c27d;
+  --brass-dim: #8f7331;
+  --brass-wash: rgba(205, 165, 92, 0.12);
+  --brass-900: #3a2f16;
+  --rust: #b05a40;
+  --rust-dim: #7a3a28;
+  --rust-wash: rgba(176, 90, 64, 0.14);
+
+  /* --- semantic ----------------------------------------------------- */
+  --surface: var(--ink-850);
+  --surface-raised: var(--ink-800);
+  --surface-sunken: var(--ink-900);
+  --border: var(--ink-600);
+  --border-soft: var(--ink-700);
+  --text: var(--parchment);
+  --text-dim: var(--parchment-dim);
+  --text-faint: var(--parchment-faint);
+
+  /* --- type scale --------------------------------------------------- */
+  --font-display: ui-serif, 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua',
+    Georgia, 'Times New Roman', serif;
+  --font-ui: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+
+  --step--2: 0.6875rem;
+  --step--1: 0.8125rem;
+  --step-0: 0.9375rem;
+  --step-1: 1.0625rem;
+  --step-2: 1.3125rem;
+  --step-3: 1.75rem;
+  --step-4: clamp(1.9rem, 1.4rem + 1.6vw, 2.6rem);
+
+  /* --- space -------------------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  /* --- shape -------------------------------------------------------- */
+  --radius-sm: 5px;
+  --radius: 9px;
+  --radius-lg: 14px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+  --shadow: 0 6px 20px -8px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 24px 60px -18px rgba(0, 0, 0, 0.85);
+
+  --focus: 0 0 0 2px var(--ink-900), 0 0 0 4px var(--brass);
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 120ms;
+  --dur: 220ms;
+  --dur-slow: 420ms;
+}

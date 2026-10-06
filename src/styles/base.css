@@ -1,0 +1,87 @@
+/* Reset and page frame. */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+/* An explicit, high-specificity rule: `hidden` must win over any display
+   value a component sets, otherwise toggling `el.hidden` silently does
+   nothing and the bug only shows up in pixels. */
+[hidden] { display: none !important; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--ink-900);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: var(--step-0);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  display: flex;
+  flex-direction: column;
+  /* A single very soft warm wash, not a gradient showpiece. */
+  background-image:
+    radial-gradient(70rem 40rem at 18% -10%, rgba(205, 165, 92, 0.055), transparent 62%),
+    radial-gradient(55rem 32rem at 92% 4%, rgba(176, 90, 64, 0.045), transparent 60%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4 { margin: 0; font-weight: 600; line-height: 1.2; }
+p { margin: 0; }
+ol, ul { margin: 0; padding: 0; list-style: none; }
+
+a {
+  color: var(--brass);
+  text-decoration-color: var(--brass-dim);
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--brass-bright); }
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus);
+  border-radius: var(--radius-sm);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -4rem;
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  background: var(--ink-700);
+  border: 1px solid var(--brass-dim);
+  border-radius: var(--radius);
+  transition: top var(--dur) var(--ease);
+}
+.skip-link:focus { top: var(--space-4); }
+
+.icon { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
