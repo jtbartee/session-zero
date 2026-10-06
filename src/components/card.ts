@@ -106,7 +106,10 @@ export function renderCard(
   }
 
   // --- component breakdown -------------------------------------------
-  const labelled = character.components.filter((c) => c.label);
+  // Skip a component whose text is the whole name: repeating it under the
+  // heading adds nothing.
+  const labelled = character.components.filter(
+    (c) => c.label && c.text.toLowerCase() !== character.name.toLowerCase());
   if (labelled.length > 0) {
     const breakdown = document.createElement('p');
     breakdown.className = 'card__breakdown';

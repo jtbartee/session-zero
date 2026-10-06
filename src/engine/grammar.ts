@@ -457,13 +457,17 @@ export function buildPhrase(ctx: ProducerContext, set: PhraseSet): ProducerOutpu
   const phrase = titleCasePhrase(tidyWord(text));
   if (!phrase) return null;
 
-  // The everyday short name: a nominated slot, else the longest content word.
+  // The everyday short name: the first nominated slot that was filled, in the
+  // order the species declares, else the longest content word. Tried in order
+  // rather than shuffled so the head noun wins — a tabaxi called "Cloud on the
+  // Mountaintop" goes by Cloud, not by Mountaintop.
   let short: string | undefined;
   if (set.shortFrom) {
-    for (const key of rng.shuffle(set.shortFrom)) {
+    for (const key of set.shortFrom) {
       const candidate = filled.get(key);
       if (candidate) {
-        short = capitalise(candidate);
+        // A short name is one word; take the head of a multi-word slot.
+        short = capitalise(candidate.split(' ').pop() as string);
         break;
       }
     }

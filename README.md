@@ -24,7 +24,7 @@ built from what published material says about how each people names itself.
 - **Six naming architectures**, used where each actually belongs: phonetic
   construction, morphological stems, compounds, descriptive phrases, chosen
   and virtue names, and closed sets where the set really is closed.
-- **76 naming traditions across 209 name structures** — a tiefling can get an
+- **76 naming traditions across 212 name structures** — a tiefling can get an
   inherited Infernal name, an ordinary regional name, or a chosen virtue name,
   because all three are canonical.
 - **Character hooks** — one sentence of situation per name, from a procedural

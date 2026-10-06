@@ -1,12 +1,12 @@
-
-# Stress-test output and UI screenshots are regenerated, not committed.
-*.local
-.DS_Store
+node_modules/
+dist/
+dist-ssr/
 .vite/
 coverage/
-dist-ssr/
-dist/
-node_modules/
-playwright-report/
-test-results/
+.DS_Store
+*.local
+
+# Regenerated artefacts: stress-test JSON and UI screenshots.
 tools/out/
+test-results/
+playwright-report/
